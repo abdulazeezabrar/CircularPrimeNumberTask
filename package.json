@@ -1,0 +1,13 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "Get the circular prime number under million",
+  "main": "circl.js",
+  "scripts": {
+    "test": "NODE_ENV=TESTING node index.js",
+    "starts": "NODE_ENV=DEV node index.js",
+    "dev": "NODE_ENV=DEV node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
