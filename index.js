@@ -16,8 +16,8 @@ const rotateNumber = number => {
 };
 
 const  isCircularPrimeNumber = (number) => {
-  // make sure that the number has not any zero digit
-  if(number.toString().indexOf(0) !== -1){
+  // make sure that the number has not any zero digit and the main number is a prime
+  if(number.toString().indexOf(0) !== -1 || !isPrime(number)){
     return false;
   }
 
@@ -42,7 +42,7 @@ const  isCircularPrimeNumber = (number) => {
 const CountCircularPrimeNumbersBelow = (num) => {
   var circularPrimeNumbers = [];
   for(var i = 0; i < num; i++){
-    if(isPrime(i) && isCircularPrimeNumber(i)) {
+    if( isCircularPrimeNumber(i)) {
       circularPrimeNumbers.push(i);
     }
   }
@@ -146,8 +146,8 @@ if(process.env.NODE_ENV == "DEV"){
   console.group();
   console.log('test isCircularPrimeNumber Function');
   console.group();
-    CeckCircularPrimeNumber(11, true);
-    CeckCircularPrimeNumber(31, true);
+    CeckCircularPrimeNumber(1, false);
+    CeckCircularPrimeNumber(14, false);
     CeckCircularPrimeNumber(101, false);
   console.groupEnd();
   console.groupEnd();
